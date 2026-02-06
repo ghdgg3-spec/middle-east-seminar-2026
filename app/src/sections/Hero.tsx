@@ -37,11 +37,12 @@ export function Hero() {
             {/* Title */}
             <h1 className="space-y-3">
               <span
-                className="font-techno block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[var(--xray-bone)] bone-glow glitch-text"
-                data-text={t('hero.title')}
-              >
-                {t('hero.title')}
-              </span>
+  lang="ko"
+  className="font-techno-ko micro-jitter pixel-shadow hero-ko-wide block text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-extrabold text-[var(--xray-bone)] bone-glow glitch-text"
+  data-text={t('hero.title')}
+>
+  {t('hero.title')}
+</span>
               <span className="font-techno block text-xl sm:text-2xl lg:text-3xl xl:text-4xl font-semibold text-[var(--xray-cyan)] xray-text-glow">
                 {t('hero.subtitle')}
               </span>
