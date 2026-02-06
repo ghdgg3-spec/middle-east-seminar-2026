@@ -2,7 +2,12 @@ import { useLanguage } from '@/hooks/useLanguage';
 import { RevealOnScroll, XRayCard } from '@/components/XRayEffects';
 
 export function InfoSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const coexUrl =
+  language === 'ko'
+    ? 'https://www.coex.co.kr/guide/directions/'
+    : 'https://www.coexcenter.com/directions-map-subway/';
+
 
   return (
     <section className="relative py-20 sm:py-28 px-4 sm:px-6 lg:px-8">
@@ -48,8 +53,16 @@ export function InfoSection() {
                 </div>
                 
                 <div className="font-techno text-3xl sm:text-4xl font-bold text-[var(--xray-bone)]">
-                  {t('info.venue.value')}
-                </div>
+  <a
+    href={coexUrl}
+    target="_blank"
+    rel="noreferrer"
+    className="underline underline-offset-4 hover:opacity-80 transition"
+  >
+    {t('info.venue.value')}
+  </a>
+</div>
+
                 
                 <div className="text-lg text-[var(--xray-text)]">
                   {t('info.venue.room')}
