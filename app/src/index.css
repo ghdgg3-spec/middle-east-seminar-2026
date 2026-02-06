@@ -510,3 +510,54 @@ body {
     display: none;
   }
 }
+/* ===== Pixel / CRT flavor pack (add-on) ===== */
+
+/* (A) Pixel-ish shadow for big Korean headings (subtle CRT afterimage) */
+.pixel-shadow {
+  text-shadow:
+    1px 0 rgba(0, 240, 255, 0.55),
+    -1px 0 rgba(255, 255, 255, 0.14),
+    0 1px rgba(0, 0, 0, 0.55);
+}
+
+/* (B) Very subtle micro-jitter (makes it feel “alive”, not textbook) */
+@keyframes micro-jitter {
+  0%, 100% { transform: translate3d(0,0,0); }
+  20% { transform: translate3d(0.3px, -0.2px, 0); }
+  40% { transform: translate3d(-0.2px, 0.2px, 0); }
+  60% { transform: translate3d(0.2px, 0.1px, 0); }
+  80% { transform: translate3d(-0.3px, -0.1px, 0); }
+}
+.micro-jitter {
+  animation: micro-jitter 2.8s infinite;
+}
+
+/* (C) Pixel-cut shape for badges / labels */
+.pixel-cut {
+  clip-path: polygon(
+    0 0,
+    96% 0,
+    100% 12%,
+    100% 100%,
+    4% 100%,
+    0 88%
+  );
+}
+
+/* (D) Subtle noise overlay (kitsch, but safe — not gross) */
+.noise-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.06; /* tweak 0.03 ~ 0.08 */
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+}
+
+/* (E) Optional: reduce the “textbook” feel for Korean hero titles */
+.hero-ko-tight {
+  letter-spacing: 0.02em;
+}
+.hero-ko-wide {
+  letter-spacing: 0.06em;
+}
