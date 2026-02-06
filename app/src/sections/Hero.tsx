@@ -12,7 +12,9 @@ export function Hero() {
       : 'https://www.coexcenter.com/directions-map-subway/';
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+  <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+    {/* Pixel Noise Overlay */}
+    <div className="noise-overlay" />
       {/* Language Toggle - Fixed Position */}
       <div className="fixed top-6 right-6 z-50">
         <LanguageToggle />
@@ -24,7 +26,7 @@ export function Hero() {
         <CornerBrackets className="p-8 sm:p-12 lg:p-16 mb-8">
           <div className="space-y-6">
             {/* Badge */}
-            <div className="inline-flex items-center gap-3 px-4 py-2 border border-[var(--xray-cyan-dim)] bg-[rgba(0,240,255,0.05)]">
+           <div className="pixel-cut inline-flex items-center gap-3 px-4 py-2 border border-[var(--xray-cyan-dim)] bg-[rgba(0,240,255,0.05)]">
               <span className="w-8 h-[1px] bg-[var(--xray-cyan)]" />
               <span className="text-xs sm:text-sm tracking-[0.2em] text-[var(--xray-cyan)] font-medium">
                 {t('hero.badge')}
